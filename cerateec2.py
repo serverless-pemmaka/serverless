@@ -7,6 +7,7 @@ Key_NAME = os.environ['KEY_NAME']
 Subnet_ID = os.environ['SUBNET_ID']
 ec2 = boto3.resource('ec2')
 
+# Entry function of the lambda function
 def lambda_handler(event,context):
     instance = ec2.create_instances(
         ImageId = AMI,
